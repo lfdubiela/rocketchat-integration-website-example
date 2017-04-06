@@ -28,7 +28,7 @@ ddp.connect().done(function () {
 
         console.log('subscrib');
 
-        notifications = ddp.subscribe("stream-user", [userId + '/notification', false]);
+        notifications = ddp.subscribe("stream-notify-user", [userId + '/notification', false]);
 
         console.log(notifications);
 
@@ -38,7 +38,7 @@ ddp.connect().done(function () {
 
         notifications.done(function() {
             console.log('watching...');
-            ddp.watch("stream-user", function(changedDoc, message) {
+            ddp.watch("stream-notify-user", function(changedDoc, message) {
                 console.log("changed...");
                 console.log(changedDoc);
                 console.log(message);
